@@ -1,0 +1,9 @@
+List of Fonts used in template 
+
+
+
+
+opensans	http://www.google.com/webfonts/list?family=Open+Sans&subset=latin
+Raleway		http://www.google.com/fonts/#QuickUsePlace:quickUse/Family:Raleway
+Rosarivo	http://www.google.com/fonts/#QuickUsePlace:quickUse/Family:Rosarivo
+

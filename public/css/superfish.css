@@ -1,0 +1,242 @@
+
+.menu_block  {
+	z-index: 999;
+	position: relative;
+	float: right;
+	padding-top: 28px;
+}
+
+
+nav>.sf-menu {
+	z-index: 999;
+	position: relative;
+}
+nav{ position:relative;padding: 0px 0 0 0;}
+.sf-menu ul {position:absolute;top:-999px; display:none;/* left offset of submenus need to match (see below) */}
+.sf-menu li {float:left;position:relative; }
+.sf-menu>li {
+	z-index: 900;
+	float: left;
+	position: relative;
+	margin-right: 14px;
+}
+
+.sf-menu>li+li {
+	margin-left: 34px;
+}
+
+
+.sf-menu>li>ul>li {
+  float: none;
+  position: static;
+}
+
+
+.sf-menu>li>a{
+	position: relative;
+	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
+	color: #fff;
+	line-height: 20px;
+	text-align: center;
+	z-index: 999;
+}
+
+.sf-menu>li>a>strong {
+	font-weight: normal;
+	color: #a1a7a1;
+	font-size: 11px;
+	line-height: 16px;
+	font-style: italic;
+	display: block;
+	text-transform: none;
+	padding-top: 2px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.sf-menu>li.current>a, .sf-menu>li.sfHover>a, .sf-menu>li>a:hover {
+	color: #e6cb6c;
+}
+
+.sf-menu>li>a.sf-with-ul:after {
+	position: absolute;
+	content: '';
+	left: 50%;
+	margin-left: -3px;
+	width: 7px;
+	background: url(../images/arrows.png) 0 bottom;
+	height: 5px;
+	bottom: -5px;
+	pointer-events: none;
+	z-index: 999;
+}
+
+
+
+.sf-menu>li>ul>li>a>span {
+	position: absolute;
+	left: 50%;
+	margin-left: -4px;
+	width: 7px;
+	background: url(../images/arrows.png) 0 0;
+	height: 5px;
+	top: 18px;
+	pointer-events: none;
+	z-index: 999;
+}
+
+.sf-menu>li>ul>li.sfHover>a>span {
+	background-position: 0 bottom;
+}
+
+
+.sf-menu a{
+
+}
+
+
+
+/*================================>> 2 Level <<========================================*/
+.sf-menu li ul,.sf-menu li.sfHover>ul{
+	top: 45px;
+	width: 97px;
+	left: 50%;
+	margin-left: -48px;
+	background: #363636;
+	z-index: 999; 
+	padding-top: 14px;
+	padding-bottom: 6px;
+
+}
+
+.sf-menu li.sfHover>ul:after {
+	width: 0px;
+	height: 0px;
+	content: '';
+	position: absolute;
+	top: -4px;
+	left: 50%;
+	margin-left: -4px;
+	border-style: solid;
+	border-width: 0 4px 4px 4px;
+	border-color: transparent transparent #363636 transparent;	
+}
+
+
+.sf-menu li.sfHover>ul>li>ul:after {
+	width: 0px;
+	left: -4px;
+	margin-left: 0;
+	top: 20px;
+	height: 0px;
+	border-style: solid;
+	border-width: 4px 4px 4px 0;
+	border-color: transparent #64c29e transparent transparent;
+} 
+
+.sf-menu li ul li{
+	margin: 0 18px 5px;
+	line-height: 20px;
+	position: relative;
+	text-align: center;
+	float: none !important;
+	font: 14px/30px 'Fjalla One', sans-serif;
+}
+
+.sf-menu li ul li+li {
+	padding-top: 3px;
+	margin-bottom: 5px;
+	border-top: 1px solid #4d4d4d;
+}
+
+
+.sf-menu li ul li a{
+	position: relative;
+	z-index: 999;
+	color:#939393;
+}
+
+.sf-menu li li a:hover, 
+.sf-menu li.sfHover li.sfHover>a {  
+	color: #fff;
+
+}
+
+/*================================>> 3 Level <<========================================*/
+.sf-menu li.sfHover li.sfHover ul{
+	top: -6px;
+	left: 127px;
+	width: 87px;
+	background-color: #64c29e;
+	padding-top: 9px;
+	padding-bottom: 11px;
+
+}
+
+.sf-menu li.sfHover li.sfHover ul li {
+	text-align: left;
+	border-color: #78caab;
+	margin-bottom: 1px;
+}
+
+.sf-menu li.sfHover li.sfHover ul li+li {
+	margin-top: 6px;
+}
+
+.sf-menu li.sfHover li.sfHover ul a {
+	color: #fff;
+}
+
+
+.sf-menu li.sfHover li.sfHover ul a:hover {
+	color: #c2f8e3;
+}
+
+
+/*==================================RESPONSIVE LAYOUTS===============================================*/
+@media only screen and (max-width: 995px) {
+
+
+	.sf-menu>li+li {
+		margin-left: 10px;
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+	.menu_block {
+		float: none !important;
+		padding: 22px 0px 25px !important;
+		clear: both;
+		margin-top: 18px;
+		min-height: 0px;
+
+	}
+
+
+  header nav{
+		float:none;
+		font:12px/15px Arial, Helvetica, sans-serif;
+		text-transform:uppercase;
+		color:#927c67;
+		margin: 0 auto;
+		
+	
+	}
+
+	.sf-menu{display:none !important; float: none;}
+	#mm0{
+		font:12px/15px Arial, Helvetica, sans-serif;
+		color:#202020;
+		width:100%;
+		margin: 0 auto;
+		float: none;
+    outline: none;
+		border:2px solid #fff;
+	}
+	
+	.search_block {
+		padding-bottom: 10px !important;	
+	}
+}
