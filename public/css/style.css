@@ -434,12 +434,17 @@ a.prev:hover {
 	font-size: 18px;
 }
 
+.fz3 {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+
 .serv {
 	padding-top: 6px;
 }
 
 .serv .clear {
-	height: 39px;
+	height: 20px;
 }
 
 a.gal img {
