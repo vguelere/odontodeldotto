@@ -59,7 +59,7 @@ h2 {
 	font-size: 30px;
 	padding-top: 49px;
 	line-height: 36px;
-	color: #6ccba6;
+	color: #505050;
 }
 
 
@@ -102,7 +102,7 @@ a {
 }
 
 a:hover {
-	color: #00CC99;
+	color: #DDDDDD;
 }
 
 a.btn {
@@ -373,7 +373,7 @@ a.prev:hover {
 	padding-right: 20px;
 	padding-bottom: 32px;
 	padding-left: 198px;
-	background: url(../images/icon.png) 23px 19px no-repeat #f67c78;
+	background: url(../images/icon.png) 23px 19px no-repeat #5FA5CE;
 	text-transform: uppercase;
 	font: 12px/20px "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
