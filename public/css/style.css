@@ -102,7 +102,7 @@ a {
 }
 
 a:hover {
-	color: #5db694;
+	color: #00CC99;
 }
 
 a.btn {
@@ -204,7 +204,21 @@ a.link1:hover {
 	margin-bottom: 34px;
 }
 
+.dente {
+	font-size:12px;
+	line-height: 20px
+	}
 
+.dente3 {
+	font-size:12px;
+	line-height: 20px
+	}
+	
+.dente2 {
+	margin-left:180px;
+	font-size:12px;
+	line-height: 20px
+	}
 
 .news time {
 	font-size: 13px;
@@ -368,6 +382,7 @@ a.prev:hover {
 	padding-top: 29px;
 	text-transform: none;
 	font: bold 30px/48px 'Raleway', sans-serif;
+	line-height: 120%;
 	margin-bottom: 4px;
 }
 
