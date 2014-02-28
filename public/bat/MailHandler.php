@@ -1,46 +1,61 @@
 <?php
-	$owner_email = $_POST["owner_email"];
-	$headers = 'From:' . $_POST["email"] . "\r\n" . 'Content-Type: text/plain; charset=UTF-8' . "\r\n";
-	$subject = 'A message from your site visitor ' . $_POST["name"];
-	$messageBody = "";
-	
-	if($_POST['name']!='nope'){
-		$messageBody .= '<p>Visitor: ' . $_POST["name"] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}
-	if($_POST['email']!='nope'){
-		$messageBody .= '<p>Email Address: ' . $_POST['email'] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
+
+$nome = $_POST["nome"];
+$email = $_POST["email"];
+$telefone = $_POST["telefone"];
+$mensagem = $_POST["mensagem"];
+
+// multiple recipients
+$to  = 'fernando.mendes@webca.com.br'; // note the comma
+
+
+// subject
+$subject = 'Contato atraves do site - odontodeldotto.com.br';
+
+// message
+$message = '
+<html>
+<body>
+  <p>Dados preenchidos:</p>
+  <table>
+    <tr>
+      <td>Nome: </td>
+      <td>'.$nome.'</td>
+    </tr>
+    <tr>
+      <td>Email: </td>
+      <td>'.$email.'</td>
+    </tr>
+    <tr>
+      <td>Telefone: </td>
+      <td>'.$telefone.'</td>
+    </tr>
+    <tr>
+      <td>Mensagem: </td>
+      <td>'.$mensagem.'</td>
+    </tr>
+  </table>
+</body>
+</html>
+';
+
+// To send HTML mail, the Content-type header must be set
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+// Additional headers
+$headers .= 'To: Fernando Mendes <fernando.mendes@webca.com.br>' . "\r\n";
+$headers .= 'From: Fernando Mendes <fernando.mendes@webca.com.br>' . "\r\n";
+
+// Mail it
+try{
+	if(!mail($to, $subject, $message, $headers)){
+		throw new Exception('mail failed');
 	}else{
-		$headers = '';
+		echo 'mail sent';
 	}
-	if($_POST['state']!='nope'){		
-		$messageBody .= '<p>State: ' . $_POST['state'] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}
-	if($_POST['phone']!='nope'){		
-		$messageBody .= '<p>Phone Number: ' . $_POST['phone'] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}	
-	if($_POST['fax']!='nope'){		
-		$messageBody .= '<p>Fax Number: ' . $_POST['fax'] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}
-	if($_POST['message']!='nope'){
-		$messageBody .= '<p>Message: ' . $_POST['message'] . '</p>' . "\n";
-	}
-	
-	if($_POST["stripHTML"] == 'true'){
-		$messageBody = strip_tags($messageBody);
-	}
-	
-	try{
-		if(!mail($owner_email, $subject, $messageBody, $headers)){
-			throw new Exception('mail failed');
-		}else{
-			echo 'mail sent';
-		}
-	}catch(Exception $e){
-		echo $e->getMessage() ."\n";
-	}
+}catch(Exception $e){
+	echo $e->getMessage() ."\n";
+}
+
 ?>
